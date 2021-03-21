@@ -21,4 +21,5 @@
     <string name="confirm_password_placeholder">Confirm Password</string>
     <string name="email_placeholder">Email</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_menu_img">Main Menu Img</string>
 </resources>

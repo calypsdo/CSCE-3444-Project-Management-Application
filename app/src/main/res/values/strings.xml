@@ -20,6 +20,6 @@
     <string name="password_placeholder">Password</string>
     <string name="confirm_password_placeholder">Confirm Password</string>
     <string name="email_placeholder">Email</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_menu_img">Main Menu Img</string>
 </resources>

@@ -4,15 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".BoardsActivity">
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:contentDescription="@string/main_menu_img"
         android:scaleType="centerCrop"
-        android:src="@drawable/login_background" />
+        android:src="@drawable/boardview_background" />
 
-    <include layout="@layout/content_main"/>
+    <FrameLayout
+        android:id="@+id/board_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,11 +1,13 @@
 package com.example.fuji
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
@@ -30,9 +32,13 @@ class LoginFragment : Fragment() {
         }
 
         view.findViewById<TextView>(R.id.login_button_text).setOnClickListener {
-            val errorMessageTextView = view.findViewById<TextView>(R.id.login_error_message)
-            //will fix the below line later
-            //errorMessageTextView.visibility = 2
+            val intent = Intent(view.context, BoardsActivity::class.java)
+            startActivity(intent)
+        }
+
+        view.findViewById<ImageView>(R.id.login_button_background).setOnClickListener {
+            val intent = Intent(view.context, BoardsActivity::class.java)
+            startActivity(intent)
         }
     }
 }

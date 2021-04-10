@@ -11,7 +11,7 @@
         android:layout_height="fill_parent"
         android:contentDescription="@string/main_menu_img"
         android:scaleType="centerCrop"
-        android:src="@drawable/login_background" />
+        android:src="@drawable/boardview_background" />
 
     <include layout="@layout/content_main"/>
 

@@ -10,4 +10,5 @@
     <color name="technic_blue">#4AAEE2</color>
     <color name="blue_button_background_text_color">#143540</color>
     <color name="login_error_textcolor">#DD624A</color>
+    <color name="transparent">#00000000</color>
 </resources>

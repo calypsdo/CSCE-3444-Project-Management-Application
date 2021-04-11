@@ -17,6 +17,9 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
+    ////////////////////Start & Firebase Authentication////////////////////
+    ///////////////////////////////////////////////////////////////////////
+
     // [START declare auth]
     private lateinit var auth: FirebaseAuth
     // [END declare_auth]
@@ -102,4 +105,11 @@ class MainActivity : AppCompatActivity() {
         Firebase.auth.signOut()
         // [END sign out]
     }
+
+    //////////////////////Valid Email Check///////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
+
+
+
+
 }

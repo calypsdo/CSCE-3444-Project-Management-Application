@@ -38,46 +38,33 @@ class RegisterFragment : Fragment() {
 
         view.findViewById<Button>(R.id.register_button).setOnClickListener {
 
-            if(firstNameInput.toString().trim().isEmpty()) {
-                Toast.makeText(context, "Enter first name", Toast.LENGTH_SHORT).show()
-            } else {
-                if(lastNameInput.toString().trim().isEmpty()) {
-                    Toast.makeText(context, "Enter last name", Toast.LENGTH_SHORT).show()
-                } else {
-                    if(passwordInput.toString().trim().isEmpty()) {
-                        Toast.makeText(context, "Enter a password", Toast.LENGTH_SHORT).show()
-                    } else {
-                        if(confirmPasswordInput.toString().trim().isEmpty()) {
-                            Toast.makeText(context, "Enter a password confirmation", Toast.LENGTH_SHORT).show()
-                        } else {
-                            if(passwordInput.toString().trim() != confirmPasswordInput.toString().trim()) {
-                                Toast.makeText(context, "Confirmation does not match password", Toast.LENGTH_SHORT).show()
-                            } else {
-                                if(emailInput.toString().trim().isEmpty()) {
-                                    Toast.makeText(context, "Enter email address", Toast.LENGTH_SHORT).show()
-                                } else {
-                                    if(emailInput.toString().matches(emailPattern)) {
-                                        Toast.makeText(context, "Valid email address", Toast.LENGTH_SHORT).show()
-                                        Handler().postDelayed({findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)}, 2000)
-                                    } else {
-                                        Toast.makeText(context, "Invalid email address", Toast.LENGTH_SHORT).show()
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            if (firstNameInput.toString().trim().isEmpty() ||
+                lastNameInput.toString().trim().isEmpty() ||
+                passwordInput.toString().trim().isEmpty() ||
+                confirmPasswordInput.toString().trim().isEmpty() ||
+                emailInput.toString().trim().isEmpty()) {
+                Toast.makeText(context, "Please fill all fields first", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+            if (passwordInput.toString().trim() != confirmPasswordInput.toString().trim()) {
+                Toast.makeText(context, "Confirmation does not match password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (!emailInput.toString().matches(emailPattern)) {
+                Toast.makeText(context, "Invalid email address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            Toast.makeText(context, "Valid email address", Toast.LENGTH_SHORT).show()
+            Handler().postDelayed({findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)}, 2000)
         }
     }
-
-
-
 }
 
 //BUTTON/XML item code for actions
 //val button = view.findViewById<Button>(R.id.register_button)
 //button.setOnClickListener {  }
+
+//ALTERNATIVELY
 
 //val textview = findViewById<TextView>(R.id.textview)
 //textview.setOnClickListener(clickListener)

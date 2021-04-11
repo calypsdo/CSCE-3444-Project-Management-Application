@@ -8,34 +8,73 @@
 
 
     <ImageView
-        android:id="@+id/register_button_background"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/blue_button_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/register_lastname_uline"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/text_entry_line"
+        app:layout_constraintBottom_toBottomOf="@+id/register_last_name_entry"
+        app:layout_constraintEnd_toEndOf="@+id/register_last_name_entry"
+        app:layout_constraintStart_toStartOf="@+id/register_last_name_entry"
+        app:layout_constraintTop_toTopOf="@+id/register_last_name_entry" />
 
-    <TextView
-        android:id="@+id/register_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register_button_text"
-        android:textColor="@color/blue_button_background_text_color"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/register_confirmpassword_uline"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/text_entry_line"
+        app:layout_constraintBottom_toBottomOf="@+id/register_confirm_password_entry"
+        app:layout_constraintEnd_toEndOf="@+id/register_confirm_password_entry"
+        app:layout_constraintStart_toStartOf="@+id/register_confirm_password_entry"
+        app:layout_constraintTop_toTopOf="@+id/register_confirm_password_entry"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/register_email_uline"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/text_entry_line"
+        app:layout_constraintBottom_toBottomOf="@+id/register_email_entry"
+        app:layout_constraintEnd_toEndOf="@+id/register_email_entry"
+        app:layout_constraintStart_toStartOf="@+id/register_email_entry"
+        app:layout_constraintTop_toTopOf="@+id/register_email_entry" />
+
+    <ImageView
+        android:id="@+id/login_password_uline3"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/text_entry_line"
+        app:layout_constraintBottom_toBottomOf="@+id/register_password_entry"
+        app:layout_constraintEnd_toEndOf="@+id/register_password_entry"
+        app:layout_constraintStart_toStartOf="@+id/register_password_entry"
+        app:layout_constraintTop_toTopOf="@+id/register_password_entry" />
+
+    <ImageView
+        android:id="@+id/register_firstname_uline"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/text_entry_line"
+        app:layout_constraintBottom_toBottomOf="@+id/register_first_name_entry"
+        app:layout_constraintEnd_toEndOf="@+id/register_first_name_entry"
+        app:layout_constraintStart_toStartOf="@+id/register_first_name_entry"
+        app:layout_constraintTop_toTopOf="@+id/register_first_name_entry" />
 
     <EditText
         android:id="@+id/register_first_name_entry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/first_name_placeholder"
+        android:inputType="textPersonName"
         android:textColor="@color/technic_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +88,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/last_name_placeholder"
+        android:inputType="textPersonName"
         android:textColor="@color/technic_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,8 +103,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/password_placeholder"
+        android:inputType="textPassword"
         android:textColor="@color/technic_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,8 +118,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/confirm_password_placeholder"
+        android:inputType="textPassword"
         android:textColor="@color/technic_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,8 +133,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="@string/email_placeholder"
+        android:inputType="textEmailAddress"
         android:textColor="@color/technic_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,4 +142,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.386" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_button_background"
+        android:backgroundTint="@color/technic_blue"
+        android:fontFamily="@font/techniclite"
+        android:text="@string/register_button_text"
+        android:textAllCaps="false"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/register_left_bracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_bracket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/register_right_bracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/right_bracket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/register_fuji_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/fuji_text_actual"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/register_right_bracket" />
+
+    <ImageView
+        android:id="@+id/register_fuji_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fuji_logo"
+        app:layout_constraintBottom_toTopOf="@+id/register_fuji_text"
+        app:layout_constraintEnd_toEndOf="@+id/register_fuji_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/register_fuji_text" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

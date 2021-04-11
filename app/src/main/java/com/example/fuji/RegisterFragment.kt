@@ -1,18 +1,20 @@
 package com.example.fuji
 
-import android.media.Image
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import java.util.*
 
 /**
- * A simple [Fragment] subclass as the second destination in the navigation.
+ * A "simple" [Fragment] subclass as the second destination in the navigation.
  */
 class RegisterFragment : Fragment() {
 
@@ -27,12 +29,45 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<ImageView>(R.id.register_button_background).setOnClickListener {
-            findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)
-        }
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+".toRegex()
+        val emailInput = view.findViewById<EditText>(R.id.register_email_entry).text
+        val firstNameInput = view.findViewById<EditText>(R.id.register_first_name_entry).text
+        val lastNameInput = view.findViewById<EditText>(R.id.register_last_name_entry).text
+        val passwordInput = view.findViewById<EditText>(R.id.register_password_entry).text
+        val confirmPasswordInput = view.findViewById<EditText>(R.id.register_confirm_password_entry).text
 
-        view.findViewById<TextView>(R.id.register_button).setOnClickListener() {
-            findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)
+        view.findViewById<Button>(R.id.register_button).setOnClickListener {
+
+            if (firstNameInput.toString().trim().isEmpty() ||
+                lastNameInput.toString().trim().isEmpty() ||
+                passwordInput.toString().trim().isEmpty() ||
+                confirmPasswordInput.toString().trim().isEmpty() ||
+                emailInput.toString().trim().isEmpty()) {
+                Toast.makeText(context, "Please fill all fields first", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (passwordInput.toString().trim() != confirmPasswordInput.toString().trim()) {
+                Toast.makeText(context, "Confirmation does not match password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (!emailInput.toString().matches(emailPattern)) {
+                Toast.makeText(context, "Invalid email address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            Toast.makeText(context, "Valid email address", Toast.LENGTH_SHORT).show()
+            Handler().postDelayed({findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)}, 2000)
         }
     }
 }
+
+//BUTTON/XML item code for actions
+//val button = view.findViewById<Button>(R.id.register_button)
+//button.setOnClickListener {  }
+
+//ALTERNATIVELY
+
+//val textview = findViewById<TextView>(R.id.textview)
+//textview.setOnClickListener(clickListener)
+
+//val button = findViewById<Button>(R.id.button)
+//button.setOnClickListener(clickListener)

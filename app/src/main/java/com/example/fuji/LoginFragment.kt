@@ -31,12 +31,7 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_LoginFragment_to_RegisterFragment)
         }
 
-        view.findViewById<TextView>(R.id.login_button_text).setOnClickListener {
-            val intent = Intent(view.context, BoardsActivity::class.java)
-            startActivity(intent)
-        }
-
-        view.findViewById<ImageView>(R.id.login_button_background).setOnClickListener {
+        view.findViewById<Button>(R.id.login_button).setOnClickListener {
             val intent = Intent(view.context, BoardsActivity::class.java)
             startActivity(intent)
         }

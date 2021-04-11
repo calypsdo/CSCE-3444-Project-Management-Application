@@ -11,47 +11,23 @@
         android:id="@+id/register_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/techniclite"
         android:text="@string/register_textview_text"
         android:textColor="@color/technic_blue"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button_background" />
-
-    <ImageView
-        android:id="@+id/login_button_background"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/blue_button_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/login_button_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/techniclite"
-        android:text="@string/login_button_text"
-        android:textSize="28sp"
-        android:textColor="@color/blue_button_background_text_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
     <EditText
         android:id="@+id/login_email_entry"
+        style="@style/login_entry_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="@string/email_placeholder"
-        style="@style/login_entry_style"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -88,5 +64,82 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.115" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_button_background"
+        android:backgroundTint="@color/technic_blue"
+        android:fontFamily="@font/techniclite"
+        android:text="@string/login_button_text"
+        android:textAllCaps="false"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/login_fuji_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/fuji_text_actual"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/login_right_bracket" />
+
+    <ImageView
+        android:id="@+id/login_left_bracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left_bracket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/login_right_bracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/right_bracket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/login_fuji_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fuji_logo"
+        app:layout_constraintBottom_toTopOf="@+id/login_fuji_text"
+        app:layout_constraintEnd_toEndOf="@+id/login_fuji_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/login_fuji_text" />
+
+    <ImageView
+        android:id="@+id/login_email_uline"
+        android:layout_width="233dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/text_entry_line"
+        app:layout_constraintBottom_toTopOf="@+id/login_password_entry"
+        app:layout_constraintEnd_toEndOf="@+id/login_email_entry"
+        app:layout_constraintStart_toStartOf="@+id/login_email_entry"
+        app:layout_constraintTop_toTopOf="@+id/login_email_entry" />
+
+    <ImageView
+        android:id="@+id/login_password_uline"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/text_entry_line"
+        app:layout_constraintBottom_toBottomOf="@+id/login_password_entry"
+        app:layout_constraintEnd_toEndOf="@+id/login_password_entry"
+        app:layout_constraintStart_toStartOf="@+id/login_password_entry"
+        app:layout_constraintTop_toBottomOf="@+id/login_email_uline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

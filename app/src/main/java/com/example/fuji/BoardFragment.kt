@@ -1,24 +1,22 @@
 package com.example.fuji
 
-import android.app.Activity
-import android.content.Intent
-import android.icu.text.CaseMap
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fuji.models.Board
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class BoardFragment : Fragment() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<BoardAdapter.ViewHolder>? = null
+    private val db = Firebase.firestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,20 +29,26 @@ class BoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val boardlist = view.findViewById<RecyclerView>(R.id.board_list)
-        val temp = arrayListOf<Board>()
-        val temp2 = Board("testing")
-        val temp3 = Board("another test")
-        temp.add(temp2)
-        temp.add(temp3)
-        boardlist.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = BoardAdapter(temp)
+        val boardListView = view.findViewById<RecyclerView>(R.id.board_list)
+
+        db.collection("/boards").get().addOnSuccessListener { result ->
+            val boards = arrayListOf<Board>()
+
+            for (document in result) {
+                val title = document["Title"].toString()
+                boards.add(Board(Title = title))
+            }
+
+            boardListView.apply {
+                layoutManager = LinearLayoutManager(activity)
+                adapter = BoardAdapter(boards)
+            }
         }
 
 
+
         view.findViewById<ImageView>(R.id.add_board_icon).setOnClickListener {
-            var createBoard: BoardsActivity = activity as BoardsActivity
+            val createBoard: BoardsActivity = activity as BoardsActivity
                 createBoard.switchToCreateBoardFragment()
         }
     }

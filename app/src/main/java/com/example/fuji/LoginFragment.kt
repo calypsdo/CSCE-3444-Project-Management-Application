@@ -3,11 +3,11 @@ package com.example.fuji
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -37,22 +37,24 @@ class LoginFragment : Fragment() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        val emailInput = view.findViewById<EditText>(R.id.login_email_entry).text
-        val passwordInput = view.findViewById<EditText>(R.id.login_password_entry).text
+        val emailInputView = view.findViewById<EditText>(R.id.login_email_entry)
+        val passwordInputView = view.findViewById<EditText>(R.id.login_password_entry)
 
         view.findViewById<TextView>(R.id.register_text).setOnClickListener {
             findNavController().navigate(R.id.action_LoginFragment_to_RegisterFragment)
         }
 
         view.findViewById<Button>(R.id.login_button).setOnClickListener {
+            val emailInput = emailInputView.text.toString().trim()
+            val passwordInput = passwordInputView.text.toString().trim()
 
-            if (emailInput.toString().trim().isEmpty() ||
-                passwordInput.toString().trim().isEmpty()) {
+            if (emailInput.isEmpty() ||
+                passwordInput.isEmpty()) {
                 Toast.makeText(context, "Please fill all fields first", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            signIn(emailInput.toString().trim(), passwordInput.toString().trim())
+            signIn(emailInput, passwordInput)
             //val intent = Intent(view.context, BoardsActivity::class.java)
             //startActivity(intent)
         }

@@ -2,19 +2,13 @@
 buildscript {
     ext.kotlin_version = "1.4.30"
     repositories {
-        google() // Added for firebase database / Google's Maven respository
+        google() // Added for firebase database / Google's Maven repository
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.3.5' // Added for firebase database
-        // Import the BoM for the Firebase platform
-        //implementation platform('com.google.firebase:firebase-bom:26.8.0')
-
-        // Declare the dependency for the Firebase Authentication library
-        // When using the BoM, you don't specify versions in Firebase library dependencies
-        //implementation 'com.google.firebase:firebase-auth-ktx'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

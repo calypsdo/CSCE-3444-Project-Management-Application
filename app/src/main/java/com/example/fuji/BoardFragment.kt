@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fuji.models.Board
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 class BoardFragment : Fragment() {
@@ -32,11 +31,12 @@ class BoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val boardListView = view.findViewById<RecyclerView>(R.id.board_list)
 
-        db.collection("boards").get().addOnSuccessListener { result ->
+        db.collection("/boards").get().addOnSuccessListener { result ->
             val boards = arrayListOf<Board>()
 
             for (document in result) {
-                boards.add(document.toObject<Board>())
+                val title = document["Title"].toString()
+                boards.add(Board(Title = title))
             }
 
             boardListView.apply {

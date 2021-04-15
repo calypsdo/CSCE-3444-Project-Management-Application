@@ -11,16 +11,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.fuji.models.Board
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
 
 class CreateBoardFragment : Fragment() {
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////START OF FIREBASE///////////////////////////////////////////
 
     private val db = Firebase.firestore
 
@@ -40,6 +39,10 @@ class CreateBoardFragment : Fragment() {
         }
     }
 
+    private val TAG = "DocSnippets"
+    ///////////////////////////////////END OF FIREBASE/////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +59,9 @@ class CreateBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val boardNameInputView = view.findViewById<EditText>(R.id.board_name_entry)
+        val boardNameInputView = view.findViewById<EditText>(R.id.create_board_entry)
 
-        view.findViewById<ImageView>(R.id.back_image).setOnClickListener {
+        view.findViewById<ImageView>(R.id.create_board_back_button).setOnClickListener {
             var board: BoardsActivity = activity as BoardsActivity
             board.switchToBoardFragment()
         }
@@ -81,8 +84,6 @@ class CreateBoardFragment : Fragment() {
             Handler().postDelayed({board.switchToBoardFragment()}, 3000)
         }
     }
-
-   private val TAG = "DocSnippets"
 }
 
 /*

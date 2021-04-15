@@ -27,19 +27,18 @@
             app:layout_constraintVertical_bias="0.048" />
 
         <ImageView
-            android:id="@+id/back_image"
+            android:id="@+id/create_board_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="14dp"
             android:src="@drawable/blue_back_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/create_board_title"
             app:layout_constraintEnd_toStartOf="@+id/create_board_title"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toEndOf="@+id/create_board_left_bracket"
+            app:layout_constraintTop_toTopOf="@+id/create_board_title" />
 
         <EditText
-            android:id="@+id/board_name_entry"
+            android:id="@+id/create_board_entry"
             style="@style/login_entry_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,15 +53,15 @@
             app:layout_constraintVertical_bias="0.3" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/create_board_board_name_uline"
             android:layout_width="273dp"
             android:layout_height="33dp"
             android:layout_marginTop="24dp"
             android:src="@drawable/text_entry_line"
-            app:layout_constraintBottom_toBottomOf="@+id/board_name_entry"
-            app:layout_constraintEnd_toEndOf="@+id/board_name_entry"
-            app:layout_constraintStart_toStartOf="@+id/board_name_entry"
-            app:layout_constraintTop_toTopOf="@+id/board_name_entry" />
+            app:layout_constraintBottom_toBottomOf="@+id/create_board_entry"
+            app:layout_constraintEnd_toEndOf="@+id/create_board_entry"
+            app:layout_constraintStart_toStartOf="@+id/create_board_entry"
+            app:layout_constraintTop_toTopOf="@+id/create_board_entry" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/create_board_button"
@@ -79,21 +78,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/board_name_entry"
+            app:layout_constraintTop_toBottomOf="@+id/create_board_entry"
             app:layout_constraintVertical_bias="0.100000024" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/create_board_left_bracket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/left_bracket"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/create_board_right_bracket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/right_bracket"

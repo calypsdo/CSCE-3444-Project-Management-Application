@@ -41,4 +41,5 @@
     <string name="due_date">Due Date</string>
     <string name="move_right">Move Right</string>
     <string name="move_left">Move Left</string>
+    <string name="create_board">Create Board</string>
 </resources>

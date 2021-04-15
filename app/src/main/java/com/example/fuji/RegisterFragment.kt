@@ -153,15 +153,3 @@ class RegisterFragment : Fragment() {
     ///////////////////////////////////END OF FIREBASE/////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////
 }
-
-//BUTTON/XML item code for actions
-//val button = view.findViewById<Button>(R.id.register_button)
-//button.setOnClickListener {  }
-
-//ALTERNATIVELY
-
-//val textview = findViewById<TextView>(R.id.textview)
-//textview.setOnClickListener(clickListener)
-
-//val button = findViewById<Button>(R.id.button)
-//button.setOnClickListener(clickListener)

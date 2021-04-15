@@ -25,8 +25,7 @@ class CreateBoardFragment : Fragment() {
 
     private fun addBoard(boardName: String) {
         val newBoard = hashMapOf(
-                "Title" to boardName,
-                "Name" to boardName
+                "Title" to boardName
         )
 
         db.collection("boards").document(boardName).set(newBoard)
@@ -85,18 +84,3 @@ class CreateBoardFragment : Fragment() {
         }
     }
 }
-
-/*
-val newBoard = hashMapOf(
-                "Title" to "New Board",
-                "Name" to "Board Name"
-        )
-
-        db.collection("test]").add(newBoard).addOnSuccessListener { documentReference ->
-            Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            Toast.makeText(context, "Board Created", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener { e ->
-            Log.w(TAG, "Error adding Board", e)
-            Toast.makeText(context, "Board Creation Failed", Toast.LENGTH_SHORT).show()
-        }
- */

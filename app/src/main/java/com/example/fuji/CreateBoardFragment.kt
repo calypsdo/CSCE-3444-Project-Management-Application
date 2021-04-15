@@ -1,17 +1,45 @@
 package com.example.fuji
 
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fuji.models.Board
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
 
 
 class CreateBoardFragment : Fragment() {
+
+    private val db = Firebase.firestore
+
+    private fun addBoard(boardName: String) {
+        val newBoard = hashMapOf(
+                "Title" to boardName,
+                "Name" to boardName
+        )
+
+        db.collection("boards").document(boardName).set(newBoard)
+                .addOnSuccessListener {
+                    Log.d(TAG, "DocumentSnapshot successfully added")
+                    Toast.makeText(context, "Board Created", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { e ->
+                    Log.w(TAG, "Error adding Board", e)
+                    Toast.makeText(context, "Board Creation Failed", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +56,46 @@ class CreateBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val boardNameInputView = view.findViewById<EditText>(R.id.board_name_entry)
+
         view.findViewById<ImageView>(R.id.back_image).setOnClickListener {
-            var Board: BoardsActivity = activity as BoardsActivity
-            Board.switchToBoardFragment()
+            var board: BoardsActivity = activity as BoardsActivity
+            board.switchToBoardFragment()
+        }
+
+        view.findViewById<Button>(R.id.create_board_button).setOnClickListener {
+            val boardNameInput = boardNameInputView.text.toString().trim()
+
+            if (boardNameInput.isEmpty()) {
+                Toast.makeText(context, "Please give the board a name first", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (boardNameInput.length > 20) {
+                Toast.makeText(context, "Please give a board name of twenty characters or less", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            // [FIREBASE ADD BOARD BEGIN]
+            addBoard(boardNameInput)
+            // [FIREBASE ADD BOARD END]
+            var board: BoardsActivity = activity as BoardsActivity
+            Handler().postDelayed({board.switchToBoardFragment()}, 3000)
         }
     }
+
+   private val TAG = "DocSnippets"
 }
+
+/*
+val newBoard = hashMapOf(
+                "Title" to "New Board",
+                "Name" to "Board Name"
+        )
+
+        db.collection("test]").add(newBoard).addOnSuccessListener { documentReference ->
+            Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            Toast.makeText(context, "Board Created", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener { e ->
+            Log.w(TAG, "Error adding Board", e)
+            Toast.makeText(context, "Board Creation Failed", Toast.LENGTH_SHORT).show()
+        }
+ */

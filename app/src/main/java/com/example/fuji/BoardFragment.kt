@@ -52,6 +52,4 @@ class BoardFragment : Fragment() {
                 createBoard.switchToCreateBoardFragment()
         }
     }
-
-
-    }
+}

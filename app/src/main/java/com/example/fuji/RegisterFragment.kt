@@ -44,34 +44,40 @@ class RegisterFragment : Fragment() {
         auth = Firebase.auth
 
         val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+".toRegex()
-        val emailInput = view.findViewById<EditText>(R.id.register_email_entry).text
-        val firstNameInput = view.findViewById<EditText>(R.id.register_first_name_entry).text
-        val lastNameInput = view.findViewById<EditText>(R.id.register_last_name_entry).text
-        val passwordInput = view.findViewById<EditText>(R.id.register_password_entry).text
-        val confirmPasswordInput = view.findViewById<EditText>(R.id.register_confirm_password_entry).text
+        val emailInputView = view.findViewById<EditText>(R.id.register_email_entry)
+        val firstNameInputView = view.findViewById<EditText>(R.id.register_first_name_entry)
+        val lastNameInputView = view.findViewById<EditText>(R.id.register_last_name_entry)
+        val passwordInputView = view.findViewById<EditText>(R.id.register_password_entry)
+        val confirmPasswordInputView = view.findViewById<EditText>(R.id.register_confirm_password_entry)
 
         view.findViewById<Button>(R.id.register_button).setOnClickListener {
 
-            if (firstNameInput.toString().trim().isEmpty() ||
-                lastNameInput.toString().trim().isEmpty() ||
-                passwordInput.toString().trim().isEmpty() ||
-                confirmPasswordInput.toString().trim().isEmpty() ||
-                emailInput.toString().trim().isEmpty()) {
+            val emailInput = emailInputView.text.toString().trim()
+            val firstNameInput = firstNameInputView.text.toString().trim()
+            val lastNameInput = lastNameInputView.text.toString().trim()
+            val passwordInput = passwordInputView.text.toString().trim()
+            val confirmPasswordInput = confirmPasswordInputView.text.toString().trim()
+
+            if (firstNameInput.isEmpty() ||
+                lastNameInput.isEmpty() ||
+                passwordInput.isEmpty() ||
+                confirmPasswordInput.isEmpty() ||
+                emailInput.isEmpty()) {
                 Toast.makeText(context, "Please fill all fields first", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (passwordInput.toString().trim() != confirmPasswordInput.toString().trim()) {
+            if (passwordInput != confirmPasswordInput) {
                 Toast.makeText(context, "Confirmation does not match password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (passwordInput.toString().trim().length < 6) {
+            if (passwordInput.length < 6) {
                 Toast.makeText(context, "Password must be greater than six characters", Toast.LENGTH_SHORT).show()
             }
-            if (!emailInput.toString().matches(emailPattern)) {
+            if (!emailInput.matches(emailPattern)) {
                 Toast.makeText(context, "Invalid email address", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            createAccount(emailInput.toString().trim(), passwordInput.toString().trim())
+            createAccount(emailInput, passwordInput)
             sendEmailVerification()
             Handler().postDelayed({findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)}, 3000)
         }
@@ -90,7 +96,7 @@ class RegisterFragment : Fragment() {
     }
 
     private fun createAccount(email: String, password: String){
-        Log.d(TAG, "creatAccount:$email")
+        Log.d(TAG, "createAccount:$email")
 
         // [START create user with email
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(requireActivity()) { task ->
@@ -147,15 +153,3 @@ class RegisterFragment : Fragment() {
     ///////////////////////////////////END OF FIREBASE/////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////
 }
-
-//BUTTON/XML item code for actions
-//val button = view.findViewById<Button>(R.id.register_button)
-//button.setOnClickListener {  }
-
-//ALTERNATIVELY
-
-//val textview = findViewById<TextView>(R.id.textview)
-//textview.setOnClickListener(clickListener)
-
-//val button = findViewById<Button>(R.id.button)
-//button.setOnClickListener(clickListener)

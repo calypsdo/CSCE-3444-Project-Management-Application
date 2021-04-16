@@ -24,8 +24,6 @@ class BoardFragment : Fragment(), BoardAdapter.OnItemClickListener {
         savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.board_fragment, container, false)
 
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val boardListView = view.findViewById<RecyclerView>(R.id.board_list)

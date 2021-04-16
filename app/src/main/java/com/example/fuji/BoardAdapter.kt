@@ -4,16 +4,32 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
+import android.widget.Toast
 import com.example.fuji.models.Board
+import android.widget.TextView
 import kotlinx.android.synthetic.main.board_item.view.*
 
 class BoardAdapter(private val boardList: List<Board>, private val listener: BoardFragment) : RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardAdapter.BoardViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.board_item, parent, false)
-        return BoardViewHolder(itemView)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val boardTitle: Button = itemView.findViewById(R.id.board_button)
+
+        init {
+            boardTitle.setOnClickListener {
+                val position: Int = adapterPosition
+                //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
+            }
+            itemView.setOnClickListener {
+                val position: Int = adapterPosition
+                //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.board_item, parent, false)
+        return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {

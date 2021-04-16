@@ -4,11 +4,13 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:card_view="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:layout_height="70dp"
+android:layout_height="wrap_content"
 android:id="@+id/board_item_card"
 card_view:cardBackgroundColor="@android:color/transparent"
 card_view:cardPreventCornerOverlap="false"
 card_view:cardElevation="0dp"
+android:foreground="?selectableItemBackground"
+android:focusable="true"
 android:clickable="true">
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,20 +19,22 @@ android:clickable="true">
     android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/board_name"
+            android:id="@+id/board_button"
             android:layout_width="205dp"
             android:layout_height="67dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/blue_button_background"
             android:backgroundTint="@color/technic_blue"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/techniclite"
+            android:foreground="?selectableItemBackground"
             android:paddingHorizontal="20sp"
             android:paddingVertical="20sp"
             android:text="@string/create_board"
             android:textAllCaps="false"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.07"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
 

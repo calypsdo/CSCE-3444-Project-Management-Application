@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import com.example.fuji.models.Board
-import android.widget.TextView
-import kotlinx.android.synthetic.main.board_item.view.*
 
-class BoardAdapter(private val boardList: List<Board>, private val listener: BoardFragment) : RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
+class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val boardTitle: Button = itemView.findViewById(R.id.board_button)
@@ -32,32 +30,12 @@ class BoardAdapter(private val boardList: List<Board>, private val listener: Boa
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
-            val currentBoard = boardList[position]
-            holder.textView.text = currentBoard.Title
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val board = boards.get(position)
+        holder.boardTitle.setText(board.Title)
         }
 
     override fun getItemCount(): Int {
-        return boardList.size
-    }
-
-    inner class BoardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-    View.OnClickListener{
-        val textView: TextView = itemView.board_name
-
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?) {
-            val position = adapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
-            }
-        }
-    }
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
+        return boards.size
     }
 }

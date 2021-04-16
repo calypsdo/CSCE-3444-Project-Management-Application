@@ -35,6 +35,4 @@ class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<
 
     fun bind(position: Int, recyclerViewClickListener: IItemClickListener) {
     }
-
-
 }

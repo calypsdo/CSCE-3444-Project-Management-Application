@@ -196,4 +196,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/register_fuji_text" />
 
+    <ImageView
+        android:id="@+id/register_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blue_back_icon"
+        app:layout_constraintStart_toEndOf="@+id/register_left_bracket"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

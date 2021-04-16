@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/board_title"
-            app:layout_constraintVertical_bias="0.273" />
+            app:layout_constraintVertical_bias="0.263" />
 
         <ImageView
             android:id="@+id/add_board_icon"
@@ -74,7 +74,7 @@
             android:src="@drawable/orange_circle_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintHorizontal_bias="0.04"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.023" />
@@ -83,13 +83,14 @@
             android:id="@+id/info_icon"
             android:layout_width="37dp"
             android:layout_height="36dp"
+            android:layout_marginBottom="4dp"
             android:src="@drawable/info_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.053"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.976" />
+            app:layout_constraintVertical_bias="0.97" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

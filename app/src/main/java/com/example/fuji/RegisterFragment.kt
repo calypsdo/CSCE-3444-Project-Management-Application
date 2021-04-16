@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.fuji.RegisterFragment.Companion.TAG
 import com.google.firebase.auth.FirebaseAuth
@@ -49,6 +46,10 @@ class RegisterFragment : Fragment() {
         val lastNameInputView = view.findViewById<EditText>(R.id.register_last_name_entry)
         val passwordInputView = view.findViewById<EditText>(R.id.register_password_entry)
         val confirmPasswordInputView = view.findViewById<EditText>(R.id.register_confirm_password_entry)
+
+        view.findViewById<ImageView>(R.id.register_back_button).setOnClickListener {
+            findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)
+        }
 
         view.findViewById<Button>(R.id.register_button).setOnClickListener {
 
@@ -136,7 +137,7 @@ class RegisterFragment : Fragment() {
         auth.currentUser!!.reload().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 updateUI(auth.currentUser)
-                Toast.makeText(context, "Reload successful!", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "Reload successful!", Toast.LENGTH_SHORT).show()
             } else {
                 Log.e(TAG, "reload", task.exception)
                 Toast.makeText(context, "Failed to reload user", Toast.LENGTH_SHORT).show()

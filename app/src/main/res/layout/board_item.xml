@@ -8,6 +8,7 @@ android:layout_height="70dp"
 android:id="@+id/board_item_card"
 card_view:cardBackgroundColor="@android:color/transparent"
 card_view:cardPreventCornerOverlap="false"
+card_view:cardElevation="0dp"
 android:clickable="true">
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,19 +18,22 @@ android:clickable="true">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/board_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="205dp"
+            android:layout_height="67dp"
+            android:autoSizeTextType="uniform"
             android:background="@drawable/blue_button_background"
             android:backgroundTint="@color/technic_blue"
             android:fontFamily="@font/techniclite"
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="20sp"
+            android:text="@string/create_board"
             android:textAllCaps="false"
-            android:textSize="28sp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.317"
+            card_view:layout_constraintHorizontal_bias="0.07"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintVertical_bias="0.0" />
+            card_view:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

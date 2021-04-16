@@ -29,50 +29,51 @@
         android:text="@string/project_name"
         android:textColor="@color/technic_blue"
         android:textSize="40sp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="220dp"
         android:layout_height="28dp"
-        android:layout_marginTop="20dp"
         android:text="@string/task_title"
         android:textColor="@color/white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.274"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         android:contentDescription="@string/project_name"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
         app:srcCompat="@drawable/break_line" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="475dp"
-        android:layout_height="653dp"
+        android:layout_width="341dp"
+        android:layout_height="600dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/task_box"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/task_square" />
 
     <ImageView
@@ -97,23 +98,22 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="46dp"
-        android:layout_height="39dp"
+        android:layout_width="42dp"
+        android:layout_height="37dp"
         android:layout_marginTop="16dp"
         android:background="@color/blue_button_background_text_color"
         android:contentDescription="@string/back_button_conent_desc"
         app:layout_constraintEnd_toStartOf="@+id/titleWindow"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blue_back_icon" />
 
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="364dp"
+        android:layout_width="289dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="350dp"
         android:contentDescription="@string/barrier"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.545"
@@ -125,6 +125,8 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="360dp"
         android:text="@string/task_Due_Date"
         android:textColor="@color/white"
         android:textSize="17sp"
@@ -132,21 +134,22 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="@string/checklist"
         android:textColor="@color/white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView7"
@@ -160,46 +163,48 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="289dp"
+        android:layout_height="22dp"
+        android:contentDescription="@string/barrier"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/break_line"
-        android:contentDescription="@string/barrier" />
+        app:srcCompat="@drawable/break_line" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="126dp">
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-1dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="5dp"
             android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/task_desc_text"
-                android:layout_width="271dp"
+                android:layout_width="270dp"
                 android:layout_height="360dp"
                 android:layout_gravity="center_horizontal"
                 android:scrollbars="vertical"
-                android:text=""
+                android:text="@string/task_description"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/checklist_desc_text"
-                android:layout_width="275dp"
-                android:layout_height="111dp"
+                android:layout_width="270dp"
+                android:layout_height="110dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="115dp"
+                android:layout_marginTop="80dp"
+                android:textSize="13sp"
                 android:scrollbars="vertical"
-                android:text=""
+                android:text="@string/checklist_goes_here"
                 android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>

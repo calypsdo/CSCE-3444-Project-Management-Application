@@ -18,8 +18,7 @@ class Task_fragment : Fragment() {
     private val db = Firebase.firestore
 
     fun readFireStore() {
-        //db.collection("boards").document(boardName).collection("tasks").document(taskName)
-        db.collection("boards")
+        db.collection("boards")//.document("Fuji").collection("categories").document("doing").collection("tasks").document("task first")
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {

@@ -20,6 +20,7 @@ class TaskActivity : AppCompatActivity() {
         setContentView(R.layout.task_view_fragment_prototype)
 
     }
+
 }
 
 

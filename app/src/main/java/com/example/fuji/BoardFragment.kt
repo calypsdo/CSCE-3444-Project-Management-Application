@@ -13,41 +13,38 @@ import com.example.fuji.models.Board
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class BoardFragment : Fragment(), BoardAdapter.OnItemClickListener {
+class BoardFragment : Fragment() {
 
-    private var masterBoardList = arrayListOf<Board>()
-    private var adapter: RecyclerView.Adapter<BoardAdapter.BoardViewHolder>? = null
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<BoardAdapter.ViewHolder>? = null
     private val db = Firebase.firestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.board_fragment, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val boardListView = view.findViewById<RecyclerView>(R.id.board_list)
 
+        // [START Firebase Get Boards]
         db.collection("/boards").get().addOnSuccessListener { result ->
+            val boards = arrayListOf<Board>()
+
             for (document in result) {
                 val title = document["Title"].toString()
-                masterBoardList.add(Board(Title = title))
+                boards.add(Board(Title = title))
             }
 
             boardListView.apply {
                 layoutManager = LinearLayoutManager(activity)
-                adapter = BoardAdapter(masterBoardList, this@BoardFragment)
+                adapter = BoardAdapter(boards)
             }
         }
-
-        //var adapter = BoardAdapter(masterBoardList, this)
-
-        //boardListView.adapter = adapter
-        //boardListView.layoutManager = LinearLayoutManager(activity)
-        //boardListView.setHasFixedSize(true)
-
+        // [END Firebase Get Boards]
 
         view.findViewById<ImageView>(R.id.add_board_icon).setOnClickListener {
             val createBoard: BoardsActivity = activity as BoardsActivity
@@ -62,15 +59,5 @@ class BoardFragment : Fragment(), BoardAdapter.OnItemClickListener {
             val helpBoard: BoardsActivity = activity as BoardsActivity
                 helpBoard.switchToHelpFragment()
         }
-    }
-
-    override fun onItemClick(position: Int) {
-        Toast.makeText(activity, "Item $position clicked", Toast.LENGTH_SHORT).show()
-        val clickedItem: Board = masterBoardList[position]
-        adapter?.notifyItemChanged(position)
-
-        //DON"T ACTUALLY USE THIS REPLACE WITH SOMETHING TO GO TO NEXT ACTIVITY
-        val test: BoardsActivity = activity as BoardsActivity
-        test.switchToHelpFragment()
     }
 }

@@ -152,6 +152,7 @@
         android:fontFamily="@font/techniclite"
         android:text="@string/register_button_text"
         android:textAllCaps="false"
+        android:foreground="?selectableItemBackground"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

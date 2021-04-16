@@ -30,6 +30,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/board_list"
             android:layout_width="287dp"
+            tools:listitem="@layout/board_item"
             android:layout_height="513dp"
             tools:itemCount="9"
             tools:listitem="@layout/board_item"

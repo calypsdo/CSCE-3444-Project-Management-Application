@@ -1,40 +1,47 @@
 package com.example.fuji
 
 import androidx.recyclerview.widget.RecyclerView
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import com.example.fuji.models.Board
-import com.google.firebase.firestore.auth.User
+import kotlinx.android.synthetic.main.board_item.view.*
 
-class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
+class BoardAdapter(private val boardList: List<Board>, private val listener: BoardFragment) : RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var boardTitle: TextView = itemView.findViewById(R.id.board_name)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardAdapter.BoardViewHolder {
+        val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.board_item, parent, false)
-        return ViewHolder(view)
+        return BoardViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val board = boards.get(position)
-        holder.boardTitle.setText(board.Title)
+    override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
+            val currentBoard = boardList[position]
+            holder.textView.text = currentBoard.Title
         }
 
     override fun getItemCount(): Int {
-        return boards.size
+        return boardList.size
     }
 
-    fun bind(position: Int, recyclerViewClickListener: IItemClickListener) {
+    inner class BoardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+    View.OnClickListener{
+        val textView: TextView = itemView.board_name
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
     }
 
-
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
 }

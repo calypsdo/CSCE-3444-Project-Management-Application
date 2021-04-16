@@ -54,4 +54,5 @@
     <string name="checklist">Checklist:</string>
     <string name="due_date_goes_here">Due date goes here</string>
     <string name="checklist_goes_here">Checklist goes here</string>
+    <string name="barrier">barrier</string>
 </resources>

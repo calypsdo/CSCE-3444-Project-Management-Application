@@ -26,6 +26,12 @@
             android:windowSoftInputMode="adjustNothing">
         </activity>
         <activity
+            android:name=".BoardsUIActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Fuji.NoActionBar"
+            android:windowSoftInputMode="adjustNothing">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Fuji.NoActionBar">

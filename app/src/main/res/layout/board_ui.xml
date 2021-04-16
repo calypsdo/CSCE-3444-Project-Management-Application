@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/workbench"
-            android:text="@string/boards_title"
+            android:text="Fuji"
             android:textColor="@color/technic_blue"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +95,7 @@
             android:layout_marginStart="122dp"
             android:layout_marginEnd="124dp"
             android:fontFamily="@font/workbench"
-            android:text="@string/category_name"
+            android:text="Doing"
             android:textColor="@color/technic_teal"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/board_ui_task_box"
@@ -127,7 +127,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/board_ui_left_bracket"
             app:layout_constraintTop_toTopOf="@+id/board_ui_task_box"
-            app:layout_constraintVertical_bias="0.482" />
+            app:layout_constraintVertical_bias="0.478" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -137,7 +137,7 @@
             android:src="@drawable/right_pink_arrow"
             app:layout_constraintBottom_toBottomOf="@+id/board_ui_task_box"
             app:layout_constraintEnd_toEndOf="@+id/board_ui_task_box"
-            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintHorizontal_bias="0.807"
             app:layout_constraintStart_toEndOf="@+id/board_ui_list"
             app:layout_constraintTop_toTopOf="@+id/board_ui_task_box"
             app:layout_constraintVertical_bias="0.496" />

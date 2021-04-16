@@ -45,4 +45,6 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="create_board">Create Board</string>
     <string name="about">About</string>
+    <string name="create_task">Create Task</string>
+    <string name="category_name">Category Name</string>
 </resources>

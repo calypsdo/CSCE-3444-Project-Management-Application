@@ -13,4 +13,5 @@
     <color name="transparent">#00000000</color>
     <color name="orange_text_color">#E27F4A</color>
     <color name="part_transparent">#33000000</color>
+    <color name="technic_teal">#4AE2CB</color>
 </resources>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,11 +46,18 @@ class BoardFragment : Fragment() {
             }
         }
 
-
-
         view.findViewById<ImageView>(R.id.add_board_icon).setOnClickListener {
             val createBoard: BoardsActivity = activity as BoardsActivity
                 createBoard.switchToCreateBoardFragment()
+        }
+
+        view.findViewById<ImageView>(R.id.logout_button).setOnClickListener {
+            activity?.finish()
+        }
+
+        view.findViewById<ImageView>(R.id.info_icon).setOnClickListener {
+            val helpBoard: BoardsActivity = activity as BoardsActivity
+                helpBoard.switchToHelpFragment()
         }
     }
 }

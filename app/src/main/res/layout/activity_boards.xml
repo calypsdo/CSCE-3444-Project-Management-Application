@@ -24,10 +24,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
+        //this is the toolbar for if we want to further implement a hamburger menu
+        <!--<include
             layout="@layout/boards_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"/>-->
 
         <FrameLayout
             android:id="@+id/board_frame"

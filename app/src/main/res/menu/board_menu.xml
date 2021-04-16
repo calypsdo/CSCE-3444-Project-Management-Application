@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_teams"
+            android:icon="@drawable/orange_circle_icon"
+            android:title="@string/teams"/>
+        <item android:id="@+id/nav_Boards"
+            android:icon="@drawable/orange_circle_icon"
+            android:title="@string/boards"/>
+        <item android:id="@+id/nav_Settings"
+            android:icon="@drawable/orange_circle_icon"
+            android:title="@string/settings"/>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <menu>
+            <item
+                android:id="@+id/nav_Help"
+                android:icon="@drawable/orange_circle_icon"
+                android:title="@string/help"/>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/orange_circle_icon"
+                android:title="@string/logout"/>
+        </menu>
+    </group>
+
+</menu>

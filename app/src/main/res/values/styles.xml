@@ -6,4 +6,9 @@
         <item name="android:textColor">@color/technic_blue</item>
         <item name="android:textAllCaps">false</item>
     </style>
+
+    <style name="NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

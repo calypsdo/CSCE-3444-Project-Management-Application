@@ -41,6 +41,10 @@
     <string name="due_date">Due Date</string>
     <string name="move_right">Move Right</string>
     <string name="move_left">Move Left</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="create_board">Create Board</string>
+    <string name="about">About</string>
     <string name="project_name">PROJECT NAME</string>
     <string name="break_in_text">break in text</string>
     <string name="task_title">Task Title</string>

@@ -11,4 +11,6 @@
     <color name="blue_button_background_text_color">#143540</color>
     <color name="login_error_textcolor">#DD624A</color>
     <color name="transparent">#00000000</color>
+    <color name="orange_text_color">#E27F4A</color>
+    <color name="part_transparent">#33000000</color>
 </resources>

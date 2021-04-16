@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -15,7 +16,7 @@
             android:id="@+id/board_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/techniclite"
+            android:fontFamily="@font/workbench"
             android:text="@string/boards_title"
             android:textColor="@color/technic_blue"
             android:textSize="36sp"
@@ -30,11 +31,13 @@
             android:id="@+id/board_list"
             android:layout_width="287dp"
             android:layout_height="513dp"
+            tools:itemCount="9"
+            tools:listitem="@layout/board_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/board_title"
-            app:layout_constraintVertical_bias="0.273" />
+            app:layout_constraintVertical_bias="0.263" />
 
         <ImageView
             android:id="@+id/add_board_icon"
@@ -48,11 +51,62 @@
             app:layout_constraintTop_toBottomOf="@+id/board_list"
             app:layout_constraintVertical_bias="0.737" />
 
+        <ImageView
+            android:id="@+id/register_left_bracket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_bracket"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/register_right_bracket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_bracket"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/logout_button"
+            android:layout_width="46dp"
+            android:layout_height="42dp"
+            android:src="@drawable/orange_circle_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+        <ImageView
+            android:id="@+id/info_icon"
+            android:layout_width="37dp"
+            android:layout_height="36dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/info_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.97" />
+
+        <ImageView
+            android:id="@+id/boards_breakline"
+            android:layout_width="326dp"
+            android:layout_height="48dp"
+            android:src="@drawable/break_line"
+            app:layout_constraintEnd_toStartOf="@+id/register_right_bracket"
+            app:layout_constraintStart_toEndOf="@+id/register_left_bracket"
+            app:layout_constraintTop_toBottomOf="@+id/board_title" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
 
 </FrameLayout>
-
 

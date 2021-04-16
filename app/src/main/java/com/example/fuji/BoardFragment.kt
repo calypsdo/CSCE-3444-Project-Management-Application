@@ -21,8 +21,7 @@ class BoardFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.board_fragment, container, false)
     }
@@ -32,6 +31,7 @@ class BoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val boardListView = view.findViewById<RecyclerView>(R.id.board_list)
 
+        // [START Firebase Get Boards]
         db.collection("/boards").get().addOnSuccessListener { result ->
             val boards = arrayListOf<Board>()
 
@@ -45,6 +45,7 @@ class BoardFragment : Fragment() {
                 adapter = BoardAdapter(boards)
             }
         }
+        // [END Firebase Get Boards]
 
         view.findViewById<ImageView>(R.id.add_board_icon).setOnClickListener {
             val createBoard: BoardsActivity = activity as BoardsActivity

@@ -1,27 +1,33 @@
 package com.example.fuji
 
 import androidx.recyclerview.widget.RecyclerView
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.TextView
+import android.widget.Button
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import com.example.fuji.models.Board
-import com.google.firebase.firestore.auth.User
 
 class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var boardTitle: TextView = itemView.findViewById(R.id.board_name)
+        val boardTitle: Button = itemView.findViewById(R.id.board_button)
+
+        init {
+            boardTitle.setOnClickListener {
+                val position: Int = adapterPosition
+                //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
+            }
+            itemView.setOnClickListener {
+                val position: Int = adapterPosition
+                //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.board_item, parent, false)
-        return ViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.board_item, parent, false)
+        return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -31,8 +37,5 @@ class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<
 
     override fun getItemCount(): Int {
         return boards.size
-    }
-
-    fun bind(position: Int, recyclerViewClickListener: IItemClickListener) {
     }
 }

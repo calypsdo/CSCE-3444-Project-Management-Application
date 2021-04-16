@@ -31,6 +31,8 @@
             android:id="@+id/board_list"
             android:layout_width="287dp"
             android:layout_height="513dp"
+            tools:itemCount="9"
+            tools:listitem="@layout/board_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

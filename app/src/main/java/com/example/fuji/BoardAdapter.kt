@@ -1,5 +1,6 @@
 package com.example.fuji
 
+import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -17,10 +18,16 @@ class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<
             boardTitle.setOnClickListener {
                 val position: Int = adapterPosition
                 //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(boardTitle.context, BoardsUIActivity::class.java)
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                boardTitle.context.startActivity(intent)
             }
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
                 //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(boardTitle.context, BoardsUIActivity::class.java)
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                boardTitle.context.startActivity(intent)
             }
         }
     }

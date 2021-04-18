@@ -19,6 +19,7 @@ class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<
                 val position: Int = adapterPosition
                 //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
                 val intent = Intent(boardTitle.context, BoardsUIActivity::class.java)
+                intent.putExtra("boardName", boardTitle.text)
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 boardTitle.context.startActivity(intent)
             }
@@ -26,6 +27,7 @@ class BoardAdapter(private val boards: ArrayList<Board>) : RecyclerView.Adapter<
                 val position: Int = adapterPosition
                 //Toast.makeText(itemView.context, "you clicked on item # ${position + 1}", Toast.LENGTH_SHORT).show()
                 val intent = Intent(boardTitle.context, BoardsUIActivity::class.java)
+                intent.putExtra("boardName", boardTitle.text)
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 boardTitle.context.startActivity(intent)
             }

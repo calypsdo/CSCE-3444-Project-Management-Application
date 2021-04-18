@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.login_fragment.*
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -80,8 +81,11 @@ class LoginFragment : Fragment() {
                 Log.d(TAG, "signInWithEmail:success")
                 val user = auth.currentUser
                 updateUI(user)
+                //getting rid of the fields so they aren't there again
                 val intent = Intent(context, BoardsActivity::class.java)
                 startActivity(intent)
+                login_email_entry.setText("")
+                login_password_entry.setText("")
             }
             else {
                 // If sign in fails, display a message to the suer

@@ -56,7 +56,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/workbench"
-            android:text="Fuji"
             android:textColor="@color/technic_blue"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +77,7 @@
             tools:listitem="@layout/board_ui_item" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/add_task_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/plus_icon"
@@ -105,7 +104,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/board_ui_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/blue_back_icon"

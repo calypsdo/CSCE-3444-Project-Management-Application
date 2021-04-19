@@ -46,4 +46,18 @@
     <string name="create_board">Create Board</string>
     <string name="about">About</string>
     <string name="category_name">Category Name</string>
+    <string name="project_name">PROJECT NAME</string>
+    <string name="break_in_text">break in text</string>
+    <string name="task_title">Task Title</string>
+    <string name="task_box">task box</string>
+    <string name="right_bracket">right bracket</string>
+    <string name="left_bracket">left bracket</string>
+    <string name="back_button_conent_desc">allows user to go back</string>
+    <string name="task_description">Task description</string>
+    <string name="dot_menu_desc">allows user option to delete subsection</string>
+    <string name="task_Due_Date">Due Date:</string>
+    <string name="checklist">Checklist:</string>
+    <string name="due_date_goes_here">Due date goes here</string>
+    <string name="checklist_goes_here">Checklist goes here</string>
+    <string name="barrier">barrier</string>
 </resources>

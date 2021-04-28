@@ -94,7 +94,7 @@
             android:layout_marginStart="122dp"
             android:layout_marginEnd="124dp"
             android:fontFamily="@font/workbench"
-            android:text="Doing"
+            android:text="Tasks"
             android:textColor="@color/technic_teal"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/board_ui_task_box"
@@ -114,33 +114,6 @@
             app:layout_constraintStart_toEndOf="@+id/board_ui_left_bracket"
             app:layout_constraintTop_toTopOf="@+id/board_ui_title"
             app:layout_constraintVertical_bias="0.75" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="57dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/left_pink_arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/board_ui_task_box"
-            app:layout_constraintEnd_toStartOf="@+id/board_ui_list"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/board_ui_left_bracket"
-            app:layout_constraintTop_toTopOf="@+id/board_ui_task_box"
-            app:layout_constraintVertical_bias="0.478" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="57dp"
-            android:layout_height="54dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/right_pink_arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/board_ui_task_box"
-            app:layout_constraintEnd_toEndOf="@+id/board_ui_task_box"
-            app:layout_constraintHorizontal_bias="0.807"
-            app:layout_constraintStart_toEndOf="@+id/board_ui_list"
-            app:layout_constraintTop_toTopOf="@+id/board_ui_task_box"
-            app:layout_constraintVertical_bias="0.496" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

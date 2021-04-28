@@ -20,37 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/titleWindow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/workbench"
-        android:gravity="center_horizontal"
-        android:text="@string/project_name"
-        android:textColor="@color/technic_blue"
-        android:textSize="40sp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="220dp"
-        android:layout_height="28dp"
-        android:text="@string/task_title"
-        android:textColor="@color/white"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.274"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -59,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/task_back_button"
         app:srcCompat="@drawable/break_line" />
 
     <ImageView
@@ -105,19 +74,39 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/task_title"
         app:srcCompat="@drawable/break_line" />
 
-    <ImageView
-        android:id="@+id/imageView7"
+    <TextView
+        android:id="@+id/task_board_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/blue_back_icon" />
+        android:fontFamily="@font/workbench"
+        android:gravity="center_horizontal"
+        android:text="Fuji"
+        android:textColor="@color/technic_blue"
+        android:textSize="40sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/task_title"
+        android:layout_width="220dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/task_title"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="@id/imageView4"
+        app:layout_constraintTop_toTopOf="@id/imageView2" />
 
     <TextView
         android:id="@+id/textView5"
@@ -132,15 +121,15 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/task_title" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/task_checklist_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/checklist"
         android:textColor="@color/white"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="35dp"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -150,11 +139,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/task_due_date"
         android:layout_width="278dp"
         android:layout_height="25dp"
         android:text=""
         android:textColor="@color/white"
+        android:layout_marginLeft="40dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -166,21 +156,32 @@
         android:contentDescription="@string/barrier"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/task_due_date"
         app:srcCompat="@drawable/break_line" />
+
+    <ImageView
+        android:id="@+id/task_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/task_title"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@drawable/blue_back_icon" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-1dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="44dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="110dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="110dp"
             android:orientation="vertical">
 
 
@@ -190,20 +191,11 @@
                 android:layout_height="360dp"
                 android:layout_gravity="center_horizontal"
                 android:scrollbars="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
                 android:text="@string/task_description"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
-
-            <TextView
-                android:id="@+id/checklist_desc_text"
-                android:layout_width="270dp"
-                android:layout_height="110dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="80dp"
-                android:textSize="13sp"
-                android:scrollbars="vertical"
-                android:text="@string/checklist_goes_here"
-                android:textColor="@color/white" />
 
         </LinearLayout>
     </ScrollView>

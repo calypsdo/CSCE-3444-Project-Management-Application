@@ -55,8 +55,6 @@ class BoardUIFragment : Fragment() {
         }
         // [END Firebase Get Tasks]
 
-
-
         //set on click listener for back button
         view.findViewById<ImageView>(R.id.board_ui_back_button).setOnClickListener {
             activity?.finish()

@@ -18,9 +18,29 @@ class BoardUIAdapter(private val tasks: ArrayList<Task>) : RecyclerView.Adapter<
         init {
             taskTitle.setOnClickListener {
                 val position: Int = adapterPosition
+                val intent = Intent(taskTitle.context, TaskViewActivity::class.java)
+                //preparing values to send to next activity
+                val task = tasks.get(position)
+                intent.putExtra("taskName", task.TaskTitle)
+                intent.putExtra("taskDescription", task.Description)
+                intent.putExtra("taskDueDate", task.DueDate)
+                intent.putExtra("taskStatus", task.Status)
+                //end of preparing values
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                taskTitle.context.startActivity(intent)
             }
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
+                val intent = Intent(taskTitle.context, TaskViewActivity::class.java)
+                //preparing values to send to next activity
+                val task = tasks.get(position)
+                intent.putExtra("taskName", task.TaskTitle)
+                intent.putExtra("taskDescription", task.Description)
+                intent.putExtra("taskDueDate", task.DueDate)
+                intent.putExtra("taskStatus", task.Status)
+                //end of preparing values
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                taskTitle.context.startActivity(intent)
             }
         }
     }

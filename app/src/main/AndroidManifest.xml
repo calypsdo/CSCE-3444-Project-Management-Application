@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fuji">
+        <activity android:name=".TaskViewActivity"></activity>
         <activity
             android:name=".SplashScreenActivity"
             android:label="@string/app_name"
@@ -22,25 +23,21 @@
         <activity
             android:name=".TaskActivity"
             android:label="Fuji"
-            android:theme="@style/Theme.Fuji.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Fuji.NoActionBar"></activity>
         <activity
             android:name=".BoardsActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Fuji.NoActionBar"
-            android:windowSoftInputMode="adjustNothing">
-        </activity>
+            android:windowSoftInputMode="adjustNothing"></activity>
         <activity
             android:name=".BoardsUIActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Fuji.NoActionBar"
-            android:windowSoftInputMode="adjustNothing">
-        </activity>
+            android:windowSoftInputMode="adjustNothing"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Fuji.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Fuji.NoActionBar"></activity>
     </application>
 
 </manifest>

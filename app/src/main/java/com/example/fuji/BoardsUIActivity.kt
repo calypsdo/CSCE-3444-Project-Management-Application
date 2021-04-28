@@ -12,7 +12,7 @@ class BoardsUIActivity : AppCompatActivity() {
         setContentView(R.layout.activity_boards_ui)
 
         //Setting up the first board fragment to show
-         val initialFragment = BoardUIFragment()
+        val initialFragment = BoardUIFragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmentHolder, initialFragment)
         transaction.commit()

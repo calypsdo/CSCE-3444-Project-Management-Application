@@ -50,11 +50,9 @@ class Task_fragment : Fragment() {
         task_desc_text.setText((activity as TaskViewActivity).TaskDescription)
         task_checklist_title.setText((activity as TaskViewActivity).TaskStatus)
 
-
         view.findViewById<ImageView>(R.id.task_back_button).setOnClickListener {
             activity?.finish()
         }
-
     }
 }
 

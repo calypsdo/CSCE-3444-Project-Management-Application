@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.board_ui.*
 
 class BoardUIFragment : Fragment() {
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -21,11 +22,17 @@ class BoardUIFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Grabs global variable from BoardsUIActivity and sets that text to the board title
-        board_ui_title.setText((activity as BoardsUIActivity).BoardName)
+        board_ui_title.setText((activity as BoardsUIActivity).boardName)
 
         //set on click listener for back button
         view.findViewById<ImageView>(R.id.board_ui_back_button).setOnClickListener {
             activity?.finish()
         }
+
+        view.findViewById<ImageView>(R.id.add_task_icon).setOnClickListener {
+            val createTask: BoardsUIActivity = activity as BoardsUIActivity
+            createTask.switchToCreateTaskFragment()
+        }
     }
 }
+

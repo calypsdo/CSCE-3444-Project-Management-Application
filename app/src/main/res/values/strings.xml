@@ -36,7 +36,6 @@
     <string name="Members">Members</string>
     <string name="create_new_subcategory">Create new Subcategory</string>
     <string name="subcategory_name">Subcategory Name</string>
-    <string name="create_task">Create Task</string>
     <string name="task_name">Task Name</string>
     <string name="due_date">Due Date</string>
     <string name="move_right">Move Right</string>
@@ -60,4 +59,8 @@
     <string name="due_date_goes_here">Due date goes here</string>
     <string name="checklist_goes_here">Checklist goes here</string>
     <string name="barrier">barrier</string>
+    <string name="create_task">Create Task</string>
+    <string name="status">Status</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
 </resources>

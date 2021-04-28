@@ -28,15 +28,29 @@ class CreateBoardFragment : Fragment() {
                 "Title" to boardName
         )
 
+        val newTask = hashMapOf(
+                "Title" to "New Task",
+                "Description" to "Fill this with what needs to be done",
+                "Due Date" to "Give a date here",
+                "Status" to "What is the status of this task"
+        )
+
         db.collection("boards").document(boardName).set(newBoard)
                 .addOnSuccessListener {
                     Log.d(TAG, "DocumentSnapshot successfully added")
-                    Toast.makeText(context, "Board Created", Toast.LENGTH_SHORT).show()
+
+                    db.collection("boards").document(boardName).collection("Tasks")
+                            .document("First Task").set(newTask).addOnSuccessListener {
+                        Log.d(TAG, "DocumentSnapshot successfully added")
+                        Toast.makeText(context, "Board Created", Toast.LENGTH_SHORT).show()
+                    }
                 }.addOnFailureListener { e ->
                     Log.w(TAG, "Error adding Board", e)
                     Toast.makeText(context, "Board Creation Failed", Toast.LENGTH_SHORT).show()
-        }
+                }
     }
+
+
 
     private val TAG = "DocSnippets"
     ///////////////////////////////////END OF FIREBASE/////////////////////////////////////////////

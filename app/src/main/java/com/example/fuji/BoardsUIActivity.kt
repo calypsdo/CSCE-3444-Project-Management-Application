@@ -5,7 +5,7 @@ import android.os.Bundle
 
 class BoardsUIActivity : AppCompatActivity() {
 
-    var BoardName: String?=null
+    var boardName: String?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +17,20 @@ class BoardsUIActivity : AppCompatActivity() {
         transaction.replace(R.id.fragmentHolder, initialFragment)
         transaction.commit()
 
-        BoardName = intent.getStringExtra("boardName")
+        boardName = intent.getStringExtra("boardName")
+    }
+
+    fun switchToCreateTaskFragment() {
+        val temp2fragment = CreateTaskFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmentHolder, temp2fragment)
+        transaction.commit()
+    }
+
+    fun switchToBoardUIFragment() {
+        val boardUIfragment = BoardUIFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmentHolder, boardUIfragment)
+        transaction.commit()
     }
 }

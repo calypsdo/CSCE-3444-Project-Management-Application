@@ -38,11 +38,6 @@ class Task_fragment : Fragment() {
         return inflater.inflate(R.layout.task_view_fragment_prototype, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val boardListView = view.findViewById<RecyclerView>(R.id.board_list)
 
-
-    }
 }
 

@@ -54,7 +54,7 @@
     <string name="back_button_conent_desc">allows user to go back</string>
     <string name="task_description">Task description</string>
     <string name="dot_menu_desc">allows user option to delete subsection</string>
-    <string name="task_Due_Date">Due Date:</string>
+    <string name="task_Due_Date"><u>Due Date:</u></string>
     <string name="checklist">Checklist:</string>
     <string name="due_date_goes_here">Due date goes here</string>
     <string name="checklist_goes_here">Checklist goes here</string>
@@ -63,4 +63,6 @@
     <string name="status">Status</string>
     <string name="date">Date</string>
     <string name="description">Description</string>
+    <string name="status_header"><u>Status:</u></string>
+    <string name="task_description_header"><u>Task Description:</u></string>
 </resources>

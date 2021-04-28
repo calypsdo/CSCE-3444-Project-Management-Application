@@ -1,6 +1,5 @@
 package com.example.fuji
 
-import android.app.AppComponentFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,12 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.board_ui.*
 import kotlinx.android.synthetic.main.task_view_fragment_prototype.*
 
 class Task_fragment : Fragment() {
@@ -48,7 +43,7 @@ class Task_fragment : Fragment() {
         task_title.setText((activity as TaskViewActivity).TaskName)
         task_due_date.setText((activity as TaskViewActivity).TaskDueDate)
         task_desc_text.setText((activity as TaskViewActivity).TaskDescription)
-        task_checklist_title.setText((activity as TaskViewActivity).TaskStatus)
+        task_status.setText((activity as TaskViewActivity).TaskStatus)
 
         view.findViewById<ImageView>(R.id.task_back_button).setOnClickListener {
             activity?.finish()

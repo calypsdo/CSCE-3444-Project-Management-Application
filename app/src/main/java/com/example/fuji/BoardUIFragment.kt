@@ -35,8 +35,8 @@ class BoardUIFragment : Fragment() {
         //Grabs global variable from BoardsUIActivity and sets that text to the board title
 
 
-        var boardName: String = (activity as BoardsUIActivity).BoardName.toString()
-        board_ui_title.setText((activity as BoardsUIActivity).BoardName)
+        var boardName: String = (activity as BoardsUIActivity).boardName.toString()
+        board_ui_title.setText((activity as BoardsUIActivity).boardName)
 
 
         // [START Firebase Get Tasks]

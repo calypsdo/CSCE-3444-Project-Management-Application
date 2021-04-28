@@ -42,7 +42,7 @@ class BoardUIFragment : Fragment() {
             for (document in result) {
                 val title = document["Title"].toString()
                 val description = document["Description"].toString()
-                val dueDate = document["DueDate"].toString()
+                val dueDate = document["Due Date"].toString()
                 val status = document["Status"].toString()
 
                 tasks.add(Task(TaskTitle = title, DueDate = dueDate, Description = description, Status = status))

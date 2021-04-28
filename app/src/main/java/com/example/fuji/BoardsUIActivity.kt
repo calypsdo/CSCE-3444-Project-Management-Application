@@ -2,10 +2,12 @@ package com.example.fuji
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.ui.AppBarConfiguration
 
 class BoardsUIActivity : AppCompatActivity() {
 
     var boardName: String?=null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +23,10 @@ class BoardsUIActivity : AppCompatActivity() {
     }
 
     fun switchToCreateTaskFragment() {
-        val temp2fragment = CreateTaskFragment()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragmentHolder, temp2fragment)
-        transaction.commit()
+        val temp2fragment = CreateTaskFragment2.newInstance(boardName.toString())
+        val taskTransaction = supportFragmentManager.beginTransaction()
+        taskTransaction.replace(R.id.fragmentHolder, temp2fragment)
+        taskTransaction.commit()
     }
 
     fun switchToBoardUIFragment() {

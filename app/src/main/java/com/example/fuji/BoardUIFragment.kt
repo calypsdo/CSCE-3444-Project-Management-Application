@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fuji.models.Board
@@ -35,8 +36,8 @@ class BoardUIFragment : Fragment() {
         //Grabs global variable from BoardsUIActivity and sets that text to the board title
 
 
-        var boardName: String = (activity as BoardsUIActivity).BoardName.toString()
-        board_ui_title.setText((activity as BoardsUIActivity).BoardName)
+        var boardName: String = (activity as BoardsUIActivity).boardName.toString()
+        board_ui_title.setText((activity as BoardsUIActivity).boardName)
 
 
         // [START Firebase Get Tasks]

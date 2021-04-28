@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fuji.models.Board
@@ -16,9 +17,11 @@ import kotlinx.android.synthetic.main.board_ui.*
 
 class BoardUIFragment : Fragment() {
 
+
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<BoardUIAdapter.ViewHolder>? = null
     private val db = Firebase.firestore
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,8 +35,10 @@ class BoardUIFragment : Fragment() {
 
         //Grabs global variable from BoardsUIActivity and sets that text to the board title
 
-        var boardName: String = (activity as BoardsUIActivity).BoardName.toString()
-        board_ui_title.setText((activity as BoardsUIActivity).BoardName)
+
+        var boardName: String = (activity as BoardsUIActivity).boardName.toString()
+        board_ui_title.setText((activity as BoardsUIActivity).boardName)
+
 
         // [START Firebase Get Tasks]
         db.collection("/boards").document(boardName).collection("Tasks").get().addOnSuccessListener { result ->
@@ -59,5 +64,11 @@ class BoardUIFragment : Fragment() {
         view.findViewById<ImageView>(R.id.board_ui_back_button).setOnClickListener {
             activity?.finish()
         }
+
+        view.findViewById<ImageView>(R.id.add_task_icon).setOnClickListener {
+            val createTask: BoardsUIActivity = activity as BoardsUIActivity
+            createTask.switchToCreateTaskFragment()
+        }
     }
 }
+

@@ -36,7 +36,7 @@
         android:layout_width="341dp"
         android:layout_height="600dp"
         android:layout_marginBottom="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/task_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,8 +129,9 @@
         android:layout_height="wrap_content"
         android:text="@string/checklist"
         android:textColor="@color/white"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="35dp"
+        android:gravity="left"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
@@ -144,7 +145,7 @@
         android:layout_height="25dp"
         android:text=""
         android:textColor="@color/white"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="25dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -171,28 +172,31 @@
         app:srcCompat="@drawable/blue_back_icon" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="44dp">
+        android:layout_width="wrap_content"
+        android:layout_height="360dp"
+        android:layout_marginBottom="135dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_title">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/task_desc_text"
                 android:layout_width="270dp"
-                android:layout_height="360dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
                 android:scrollbars="vertical"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp"
                 android:text="@string/task_description"
                 android:textColor="@color/white"
                 android:textSize="13sp" />

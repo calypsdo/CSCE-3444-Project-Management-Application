@@ -70,7 +70,7 @@ If you do not have a login currently (within the database up, or your own), you 
 
 See the following [youtube video](https://www.youtube.com/watch?v=p7EMl0Hg3bg) for the rest of the functionality and how to use the app.
 
-[![YOUTUBEIMAGE](https://github.com/calypsdo/CSCE-3444-Project-Management-Application/assets/8111664/4546079b-752e-4daa-a92b-79541fc0d405)](https://www.youtube.com/watch?v=p7EMl0Hg3bg)
+[![AppWorking](https://github.com/calypsdo/CSCE-3444-Project-Management-Application/assets/8111664/9e787369-ac87-4533-988d-7359dc4c3b76)](https://www.youtube.com/watch?v=p7EMl0Hg3bg)
 
 ## Issues
 

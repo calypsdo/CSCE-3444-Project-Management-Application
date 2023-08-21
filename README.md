@@ -79,7 +79,7 @@ See the following [youtube video](https://www.youtube.com/watch?v=p7EMl0Hg3bg) f
 ## Authors
 
 * **Calypsdo** - [Calypsdo](https://github.com/calypsdo?tab=overview&from=2023-08-01&to=2023-08-06)
-* **Chet Lockwood** - [SgtR0ck](https://github.com/SgtR0ck)
+* **Chet Lockwood** - [Atoms-x](https://github.com/Atoms-x)
 * **Nile Barfield** - [NileBarfield](https://github.com/NileBarfield)
 * **Zac** - [zbarnes757](https://github.com/zbarnes757)
 * **TheOneTrueByte** - [TheOneTrueByte](https://github.com/TheOneTrueByte?tab=overview&from=2023-08-01&to=2023-08-06)

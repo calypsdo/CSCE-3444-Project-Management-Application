@@ -11,7 +11,7 @@
   </a>
   <img src="https://img.shields.io/badge/language-Kotlin-0095D5.svg?style=plastic&logo=kotlin">
   <img src="https://img.shields.io/badge/IDE-Android Studio-3DDC84.svg?style=plastic&logo=android-studio">
-  <img src="https://img.shields.io/badge/framework-Firebase-ffca28.svg?style=plastic&lobo=firebase">
+  <img src="https://img.shields.io/badge/framework-Firebase-ffca28.svg?style=plastic&logo=firebase">
 </p>
 
 ## Table of Contents

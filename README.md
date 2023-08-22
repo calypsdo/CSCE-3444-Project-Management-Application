@@ -26,7 +26,7 @@
 
 ## Introduction
 
-This is an Android Dev Studio/Kotlin based program that is a project management app for use on android-based cell phones. It utilizes Firebase for the database to store the necessary data structures
+This is an Android Dev Studio/Kotlin based program that is a project management app for use on android-based cell phones. It utilizes Firebase for the database to store the necessary data structures.
 
 ## Getting Started
 
